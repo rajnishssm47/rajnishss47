@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rajnish Singh - Senior .NET Developer | Full Stack .NET Developer">
+<title>Rajnish Singh | Senior .NET Developer</title>
+<style>
+:root{
+ --bg:#050816;--panel:#0b1023;--panel2:#101735;--text:#f4f7ff;--muted:#9eabc4;
+ --line:rgba(148,163,184,.16);--blue:#3b82f6;--cyan:#22d3ee;--purple:#8b5cf6;
+ --green:#34d399;--gold:#fbbf24;--shadow:0 25px 70px rgba(0,0,0,.35)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:
+radial-gradient(circle at 10% 10%,rgba(59,130,246,.18),transparent 28%),
+radial-gradient(circle at 90% 15%,rgba(139,92,246,.16),transparent 26%),
+radial-gradient(circle at 50% 80%,rgba(34,211,238,.08),transparent 28%),var(--bg);
+color:var(--text);line-height:1.55;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+a{text-decoration:none;color:inherit}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(5,8,22,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,var(--purple),var(--blue));box-shadow:0 0 28px rgba(59,130,246,.35)}
+.brand b{display:block;font-size:17px}.brand small{color:var(--muted);font-size:11px}
+.links{display:flex;gap:20px;color:var(--muted);font-size:13px}.links a:hover{color:white}
+.cta{padding:10px 17px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--purple));font-weight:700;font-size:13px}
+.hero{padding:70px 0 42px;position:relative}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:38px;align-items:center}
+.kicker{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border:1px solid rgba(34,211,238,.25);background:rgba(34,211,238,.06);border-radius:999px;color:#a5f3fc;font-size:12px}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
+h1{font-size:clamp(48px,7vw,82px);line-height:.95;letter-spacing:-3px;margin:18px 0 15px}
+h1 span{background:linear-gradient(135deg,#fff 30%,#8be9ff 65%,#b9a3ff);-webkit-background-clip:text;color:transparent}
+.role{font-size:20px;color:#c7d2fe;font-weight:700}.desc{margin-top:16px;color:var(--muted);font-size:15px;max-width:760px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.tag{padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.025);font-size:11px;color:#dbeafe}
+.actions{display:flex;gap:12px}.btn{padding:12px 17px;border:1px solid var(--line);border-radius:12px;font-weight:700;font-size:13px}.btn.primary{border:0;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 12px 30px rgba(59,130,246,.22)}
+.profile{position:relative;min-height:410px;display:grid;place-items:center}.orb{position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.28),rgba(139,92,246,.09) 45%,transparent 70%);filter:blur(4px)}
+.photo{position:relative;width:260px;height:340px;object-fit:cover;border-radius:26px;border:1px solid rgba(255,255,255,.18);box-shadow:var(--shadow);background:#111}
+.float{position:absolute;padding:11px 13px;border:1px solid var(--line);background:rgba(11,16,35,.82);backdrop-filter:blur(14px);border-radius:14px;font-size:11px;box-shadow:var(--shadow)}
+.f1{left:0;top:55px}.f2{right:0;bottom:50px}.float b{display:block;color:#fff;font-size:13px}.float small{color:var(--muted)}
+section{margin:22px 0}.panel{background:linear-gradient(180deg,rgba(16,23,53,.78),rgba(9,14,31,.82));border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+.pad{padding:28px}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8be9ff;font-weight:800}.title{font-size:28px;margin-top:5px}.title span{color:#a5b4fc}
+.about-grid{display:grid;grid-template-columns:1.45fr .55fr;gap:16px}.about p{color:var(--muted);margin-top:12px;font-size:14px}.highlight{margin-top:18px;padding:13px;border-radius:13px;background:linear-gradient(90deg,rgba(59,130,246,.11),rgba(139,92,246,.11));border:1px solid rgba(99,102,241,.22);font-size:12px;color:#dbeafe}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}.stat b{font-size:27px;color:#fff;display:block}.stat small{color:var(--muted);font-size:11px}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{padding:21px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025);transition:.25s}.card:hover{transform:translateY(-4px);border-color:rgba(96,165,250,.45);background:rgba(59,130,246,.06)}
+.card h3{margin:9px 0 8px;font-size:16px}.card p,.card li{color:var(--muted);font-size:13px}.card ul{padding-left:17px}.card li{margin:4px 0}.icon{font-size:22px}.c4{grid-column:span 4}.c6{grid-column:span 6}.c8{grid-column:span 8}.c12{grid-column:span 12}
+.feature{position:relative;overflow:hidden}.feature:after{content:"AI";position:absolute;right:16px;top:-24px;font-size:120px;font-weight:900;color:rgba(34,211,238,.05)}
+.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.impact .card{min-height:180px}.number{font-size:12px;color:#8be9ff;font-weight:800}
+.flow{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.step{padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:11px;color:#cbd5e1}.arrow{color:#64748b;align-self:center}
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}.contact h2{font-size:34px}.contact p{color:var(--muted);margin-top:8px}.contact-links{display:grid;gap:10px}.contact-links a{padding:14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}.contact-links small{display:block;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
+footer{text-align:center;color:#64748b;padding:25px;font-size:12px}
+@media(max-width:850px){.links{display:none}.hero-grid,.about-grid,.contact{grid-template-columns:1fr}.profile{min-height:330px;order:-1}.photo{width:220px;height:290px}.c4,.c6,.c8{grid-column:span 6}.impact{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wrap{width:min(100% - 20px,1180px)}.navin{height:64px}.brand small{display:none}.cta{padding:9px 11px;font-size:11px}.hero{padding:34px 0 20px}.profile{min-height:285px}.photo{width:190px;height:250px;border-radius:22px}.orb{width:260px;height:260px}.f1{left:0;top:30px}.f2{right:0;bottom:20px}.float{padding:8px 9px;font-size:9px}.float b{font-size:11px}h1{letter-spacing:-2px}.role{font-size:16px}.desc{font-size:13px}.actions{flex-direction:column}.actions a{text-align:center}.pad{padding:19px}.title{font-size:23px}.about-grid{gap:14px}.stats{grid-template-columns:1fr 1fr}.stat{padding:14px}.stat b{font-size:22px}.bento{grid-template-columns:1fr}.c4,.c6,.c8,.c12{grid-column:span 1}.impact{grid-template-columns:1fr}.contact h2{font-size:28px}.tags{margin:17px 0}.tag{font-size:10px}.highlight{font-size:10px}}
+</style>
+
+<style id="premium-upgrade">
+/* Premium visual upgrade */
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 8% 12%, rgba(88,101,242,.16), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba(0,210,255,.10), transparent 24%),
+    radial-gradient(circle at 50% 85%, rgba(128,90,213,.10), transparent 30%),
+    var(--bg,#07111f);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.34;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(to bottom,black,transparent 82%);
+}
+nav,.nav{
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:rgba(7,17,31,.72)!important;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.hero,.hero-wrap{
+  position:relative;overflow:hidden;
+}
+.hero:after,.hero-wrap:after{
+  content:"";position:absolute;width:460px;height:460px;border-radius:50%;
+  right:-180px;top:-170px;border:1px solid rgba(111,160,255,.16);
+  box-shadow:0 0 0 55px rgba(111,160,255,.025),0 0 0 110px rgba(111,160,255,.018);
+  pointer-events:none;
+}
+.panel,.section{
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 18px 60px rgba(0,0,0,.18);
+}
+.card{
+  position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,.09)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025))!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.16);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.card:before{
+  content:"";position:absolute;left:0;top:0;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent,#72a7ff),transparent);
+  opacity:.65;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 42px rgba(0,0,0,.28);
+  border-color:rgba(114,167,255,.35)!important;
+}
+.icon{
+  box-shadow:0 10px 26px rgba(64,125,255,.18);
+  border:1px solid rgba(255,255,255,.10);
+}
+.tag{
+  border:1px solid rgba(114,167,255,.18)!important;
+  background:rgba(114,167,255,.07)!important;
+  transition:transform .2s ease,background .2s ease;
+}
+.tag:hover{transform:translateY(-2px);background:rgba(114,167,255,.14)!important}
+.btn.primary{
+  box-shadow:0 12px 28px rgba(80,130,255,.24);
+}
+.btn{transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(0,0,0,.22)}
+.title,.section-title{letter-spacing:-.035em}
+.number{
+  width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:rgba(114,167,255,.10);border:1px solid rgba(114,167,255,.20);
+  font-weight:800;margin-bottom:14px;
+}
+#construction-project,#gaming-project,#ott-project{
+  position:relative;
+}
+#construction-project:before,#gaming-project:before,#ott-project:before{
+  content:"";position:absolute;left:0;top:0;width:5px;height:100%;
+  background:linear-gradient(to bottom,var(--accent,#72a7ff),transparent);
+  border-radius:8px;
+}
+section{scroll-margin-top:90px}
+@media(max-width:760px){
+  body:before{background-size:32px 32px}
+  .hero:after,.hero-wrap:after{width:300px;height:300px;right:-170px;top:-110px}
+  .card:hover{transform:translateY(-3px)}
+}
+</style>
+
+
+<style id="domain-impact-images">
+#impact .card{
+  min-height:240px;
+  background-size:cover!important;
+  background-position:center!important;
+  isolation:isolate;
+}
+#impact .card:after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(5,12,24,.18),rgba(5,12,24,.92) 78%);
+  border-radius:inherit;
+}
+#impact .card > *{position:relative;z-index:1}
+#impact .card:nth-of-type(1){
+  background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=85')!important;
+}
+#impact .card:nth-of-type(2){
+  background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85')!important;
+}
+#impact .card:nth-of-type(3){
+  background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85')!important;
+}
+#impact .card:nth-of-type(4){
+  background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85')!important;
+}
+#impact .card:nth-of-type(5){
+  background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85')!important;
+}
+#impact .card h3{margin-top:22px}
+#impact .card p{color:rgba(235,242,255,.82)!important}
+@media(max-width:760px){
+  #impact .card{min-height:210px;background-position:center}
+}
+</style>
+
+
+<style id="full-site-visual-upgrade">
+/* ===== Full-site visual upgrade ===== */
+.panel{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(148,163,184,.18)!important;
+  box-shadow:0 24px 70px rgba(0,0,0,.28)!important;
+}
+.panel::before{
+  content:"";
+  position:absolute;
+  inset:auto -100px -180px auto;
+  width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(59,130,246,.14),rgba(139,92,246,.04) 42%,transparent 70%);
+  pointer-events:none;
+}
+.panel > *{position:relative;z-index:1}
+
+/* Give major sections their own visual atmosphere */
+#about{
+  background:
+    linear-gradient(90deg,rgba(8,13,30,.96) 42%,rgba(8,13,30,.70) 100%),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=85') center/cover!important;
+}
+#expertise{
+  background:
+    linear-gradient(90deg,rgba(8,13,30,.96),rgba(8,13,30,.78)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1500&q=85') center/cover!important;
+}
+#construction-project{
+  background:
+    linear-gradient(90deg,rgba(8,13,30,.97),rgba(8,13,30,.72)),
+    url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=85') center/cover!important;
+}
+#gaming-project{
+  background:
+    linear-gradient(90deg,rgba(8,13,30,.97),rgba(8,13,30,.72)),
+    url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85') center/cover!important;
+}
+#ott-project{
+  background:
+    linear-gradient(90deg,rgba(8,13,30,.97),rgba(8,13,30,.70)),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=85') center/cover!important;
+}
+#domains{
+  background:
+    linear-gradient(90deg,rgba(8,13,30,.97),rgba(8,13,30,.76)),
+    url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=85') center/cover!important;
+}
+#contact{
+  background:
+    linear-gradient(90deg,rgba(8,13,30,.97),rgba(8,13,30,.68)),
+    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=85') center/cover!important;
+}
+
+/* Visual card treatment throughout the site */
+.bento .card,.impact .card{
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  background:linear-gradient(145deg,rgba(18,27,58,.82),rgba(8,13,30,.82))!important;
+}
+#expertise .card:nth-child(1){background:
+  linear-gradient(145deg,rgba(8,13,30,.90),rgba(8,13,30,.68)),
+  url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80') center/cover!important;}
+#expertise .card:nth-child(2){background:
+  linear-gradient(145deg,rgba(8,13,30,.92),rgba(8,13,30,.68)),
+  url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80') center/cover!important;}
+#expertise .card:nth-child(5){background:
+  linear-gradient(145deg,rgba(8,13,30,.90),rgba(8,13,30,.64)),
+  url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80') center/cover!important;}
+
+/* Project feature cards get subtle image texture */
+#construction-project .card,
+#gaming-project .card,
+#ott-project .card{
+  background-color:rgba(8,13,30,.82)!important;
+}
+#construction-project .card:nth-child(1),
+#construction-project .card:nth-child(2),
+#construction-project .card:nth-child(3){
+  background-image:linear-gradient(145deg,rgba(8,13,30,.91),rgba(8,13,30,.68)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80')!important;
+  background-size:cover!important;
+}
+#gaming-project .card:nth-child(1),
+#gaming-project .card:nth-child(2),
+#gaming-project .card:nth-child(3){
+  background-image:linear-gradient(145deg,rgba(8,13,30,.91),rgba(8,13,30,.68)),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80')!important;
+  background-size:cover!important;
+}
+#ott-project .card:nth-child(1),
+#ott-project .card:nth-child(2),
+#ott-project .card:nth-child(3){
+  background-image:linear-gradient(145deg,rgba(8,13,30,.91),rgba(8,13,30,.68)),url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80')!important;
+  background-size:cover!important;
+}
+
+/* Domain cards: image-rich and more premium */
+#domains .card:nth-child(1){background-image:linear-gradient(180deg,rgba(8,13,30,.30),rgba(8,13,30,.92)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80')!important;background-size:cover!important}
+#domains .card:nth-child(2){background-image:linear-gradient(180deg,rgba(8,13,30,.30),rgba(8,13,30,.92)),url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80')!important;background-size:cover!important}
+#domains .card:nth-child(3){background-image:linear-gradient(180deg,rgba(8,13,30,.30),rgba(8,13,30,.92)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80')!important;background-size:cover!important}
+#domains .card:nth-child(4){background-image:linear-gradient(180deg,rgba(8,13,30,.30),rgba(8,13,30,.92)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80')!important;background-size:cover!important}
+#domains .card:nth-child(5){background-image:linear-gradient(180deg,rgba(8,13,30,.30),rgba(8,13,30,.92)),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80')!important;background-size:cover!important}
+#domains .card:nth-child(6){background-image:linear-gradient(180deg,rgba(8,13,30,.30),rgba(8,13,30,.92)),url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80')!important;background-size:cover!important}
+
+/* Better spacing, titles and interaction */
+.title{font-size:clamp(30px,4vw,52px)!important}
+.panel .eyebrow{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(34,211,238,.18);
+  background:rgba(34,211,238,.06);
+}
+.card{border-radius:18px!important}
+.card:hover{transform:translateY(-7px) scale(1.01)!important}
+.contact-links a{
+  background:rgba(7,12,29,.70)!important;
+  border:1px solid rgba(255,255,255,.10)!important;
+  backdrop-filter:blur(10px);
+}
+@media(max-width:760px){
+  #about,#expertise,#construction-project,#gaming-project,#ott-project,#domains,#contact{
+    background-position:center!important;
+  }
+  .panel{border-radius:20px!important}
+  .title{font-size:30px!important}
+}
+</style>
+
+
+<style id="solution-delivery-premium-v2">
+/* ===== Solution Delivery: premium developer-code visual ===== */
+#solution-delivery, #delivery, .solution-delivery{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  border:1px solid rgba(102,126,234,.22)!important;
+  background:
+    radial-gradient(circle at 78% 28%,rgba(124,58,237,.17),transparent 24%),
+    radial-gradient(circle at 44% 72%,rgba(14,165,233,.12),transparent 28%),
+    linear-gradient(135deg,rgba(7,12,29,.98),rgba(11,20,43,.94))!important;
+}
+#solution-delivery:before, #delivery:before, .solution-delivery:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;z-index:-1;
+  background-image:
+    linear-gradient(rgba(99,102,241,.28) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(99,102,241,.28) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(90deg,transparent 0%,black 38%,black 100%);
+}
+#solution-delivery:after, #delivery:after, .solution-delivery:after{
+  content:"// SOLUTION DELIVERY  •  SOLUTION DELIVERY  •  SOLUTION DELIVERY  •  SOLUTION DELIVERY";
+  position:absolute;right:-30px;bottom:14px;letter-spacing:.34em;font-size:10px;
+  color:rgba(129,140,248,.18);white-space:nowrap;transform:rotate(-2deg);
+  pointer-events:none;
+}
+
+/* If the existing section contains cards, turn them into code-terminal surfaces */
+#solution-delivery .card, #delivery .card, .solution-delivery .card{
+  background:linear-gradient(145deg,rgba(12,21,48,.88),rgba(5,10,26,.90))!important;
+  border:1px solid rgba(99,102,241,.18)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 18px 40px rgba(0,0,0,.22)!important;
+}
+#solution-delivery .card:hover, #delivery .card:hover, .solution-delivery .card:hover{
+  border-color:rgba(129,140,248,.46)!important;
+  box-shadow:0 24px 55px rgba(0,0,0,.34),0 0 32px rgba(99,102,241,.10)!important;
+}
+
+/* Injected code showcase */
+.code-showcase{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:16px;
+  margin-top:22px;
+}
+.code-window{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid rgba(120,140,255,.20);
+  background:linear-gradient(145deg,rgba(4,10,25,.96),rgba(11,20,48,.92));
+  box-shadow:0 18px 48px rgba(0,0,0,.30);
+}
+.code-window:before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:42px;
+  background:linear-gradient(90deg,rgba(99,102,241,.14),rgba(14,165,233,.05));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.code-title{
+  position:relative;z-index:2;height:42px;display:flex;align-items:center;
+  padding:0 16px;font-size:12px;font-weight:700;color:#dbeafe;
+}
+.dots{display:inline-flex;gap:6px;margin-right:10px}
+.dots i{display:block;width:7px;height:7px;border-radius:50%;background:#64748b}
+.dots i:nth-child(2){background:#818cf8}.dots i:nth-child(3){background:#38bdf8}
+.code-window pre{
+  margin:0;padding:18px 18px 20px;overflow:auto;
+  font:12px/1.72 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color:#cbd5e1;white-space:pre-wrap;
+}
+.kw{color:#c084fc}.type{color:#67e8f9}.fn{color:#fbbf24}.str{color:#86efac}.sql{color:#fb7185}.comment{color:#64748b}
+.code-stats{
+  display:flex;gap:9px;flex-wrap:wrap;margin-top:12px;
+}
+.code-stat{
+  padding:7px 10px;border-radius:999px;font-size:11px;
+  border:1px solid rgba(129,140,248,.16);background:rgba(99,102,241,.07);color:#c7d2fe;
+}
+@media(max-width:850px){
+  .code-showcase{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .code-window pre{font-size:10px;line-height:1.55;padding:15px}
+  .code-showcase{gap:12px}
+}
+</style>
+
+
+<style id="solution-delivery-code-bg">
+#solution-delivery, #delivery, .solution-delivery{
+  position:relative!important;
+}
+#solution-delivery .solution-code-bg, #delivery .solution-code-bg, .solution-delivery .solution-code-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:.16;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+#solution-delivery .solution-code-bg span, #delivery .solution-code-bg span, .solution-delivery .solution-code-bg span{
+  position:absolute;
+  color:#a5b4fc;
+  white-space:nowrap;
+  font-weight:700;
+}
+#solution-delivery .solution-code-bg .l1, #delivery .solution-code-bg .l1, .solution-delivery .solution-code-bg .l1{
+  top:7%; left:3%; font-size:18px;
+}
+#solution-delivery .solution-code-bg .l2, #delivery .solution-code-bg .l2, .solution-delivery .solution-code-bg .l2{
+  top:23%; right:-8%; font-size:34px; letter-spacing:.08em; color:#38bdf8;
+  transform:rotate(-4deg);
+}
+#solution-delivery .solution-code-bg .l3, #delivery .solution-code-bg .l3, .solution-delivery .solution-code-bg .l3{
+  top:48%; left:-5%; font-size:22px; color:#c084fc; transform:rotate(2deg);
+}
+#solution-delivery .solution-code-bg .l4, #delivery .solution-code-bg .l4, .solution-delivery .solution-code-bg .l4{
+  bottom:15%; right:3%; font-size:16px; color:#86efac;
+}
+#solution-delivery .solution-code-bg .l5, #delivery .solution-code-bg .l5, .solution-delivery .solution-code-bg .l5{
+  bottom:3%; left:12%; font-size:42px; letter-spacing:.12em; color:#818cf8;
+  transform:rotate(-2deg);
+}
+#solution-delivery > *:not(.solution-code-bg),
+#delivery > *:not(.solution-code-bg),
+.solution-delivery > *:not(.solution-code-bg){
+  position:relative;
+  z-index:1;
+}
+@media(max-width:700px){
+  #solution-delivery .solution-code-bg .l2, #delivery .solution-code-bg .l2, .solution-delivery .solution-code-bg .l2{font-size:19px}
+  #solution-delivery .solution-code-bg .l5, #delivery .solution-code-bg .l5, .solution-delivery .solution-code-bg .l5{font-size:22px}
+}
+</style>
+
+
+
+<style id="contact-page-link-style">
+#contact .contact-page-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:20px;padding:14px 24px;border-radius:14px;text-decoration:none;
+  color:#fff;font-weight:800;font-size:15px;letter-spacing:.2px;
+  background:linear-gradient(135deg,#6366f1,#0ea5e9);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 14px 32px rgba(14,165,233,.22);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+#contact .contact-page-cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 42px rgba(99,102,241,.32);
+}
+@media(max-width:760px){
+  #contact .contact-page-cta{width:100%;padding:15px 18px}
+}
+</style>
+
+
+<style id="rajnish-brand-upgrade">
+.brand-name, .logo, .name, .hero-name{
+  letter-spacing:.4px;
+}
+.rajnish-signature{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 12px;
+  padding:9px 14px;
+  border:1px solid rgba(34,211,238,.20);
+  border-radius:999px;
+  background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(139,92,246,.08));
+  color:#dbeafe;
+  font-size:13px;
+  font-weight:700;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+.rajnish-signature .dot{
+  width:9px;height:9px;border-radius:50%;
+  background:linear-gradient(135deg,#22d3ee,#8b5cf6);
+  box-shadow:0 0 16px rgba(34,211,238,.55);
+}
+.rajnish-signature strong{
+  color:#fff;
+  font-size:14px;
+  letter-spacing:.7px;
+}
+.hero h1, h1 .name-highlight{
+  text-shadow:0 8px 30px rgba(34,211,238,.08);
+}
+</style>
+
+
+<style id="photo-layout-adjustment">
+/* ===== Tighter hero/photo layout: reduce empty space ===== */
+.hero, .hero-section, #home{
+  min-height:auto!important;
+  padding-top:56px!important;
+  padding-bottom:56px!important;
+}
+.hero-content, .hero-inner{
+  gap:28px!important;
+  align-items:center!important;
+}
+.hero-text{
+  max-width:680px!important;
+}
+.hero-image, .profile-image, .photo-wrap, .image-wrap{
+  margin:0 auto!important;
+}
+.hero-image img, .profile-image img, .photo-wrap img, .image-wrap img{
+  max-height:430px!important;
+  object-fit:cover!important;
+}
+.hero .container, .hero-section .container, #home .container{
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+
+/* Reduce oversized gaps around visual sections */
+section.panel{
+  margin-top:24px!important;
+  margin-bottom:24px!important;
+  padding-top:48px!important;
+  padding-bottom:48px!important;
+}
+@media(min-width:1000px){
+  .hero, .hero-section, #home{padding-top:48px!important;padding-bottom:48px!important}
+}
+@media(max-width:760px){
+  .hero, .hero-section, #home{padding-top:32px!important;padding-bottom:38px!important}
+  .hero-content, .hero-inner{gap:20px!important}
+  .hero-image img, .profile-image img, .photo-wrap img, .image-wrap img{max-height:340px!important}
+  section.panel{padding-top:32px!important;padding-bottom:32px!important}
+}
+</style>
+
+
+<style id="hero-code-visual-upgrade">
+/* ===== HERO VISUAL UPGRADE ===== */
+.hero, .hero-section, #home{
+  position:relative;
+  overflow:hidden;
+}
+
+/* Decorative code panels fill the empty background area */
+.hero::before, .hero-section::before, #home::before{
+  content:"";
+  position:absolute;
+  inset:80px 0 0 0;
+  pointer-events:none;
+  opacity:.32;
+  background:
+    linear-gradient(90deg, transparent 0 46%, rgba(99,102,241,.10) 46% 46.15%, transparent 46.15%),
+    repeating-linear-gradient(90deg, transparent 0 88px, rgba(255,255,255,.025) 89px 90px),
+    repeating-linear-gradient(0deg, transparent 0 44px, rgba(255,255,255,.018) 45px 46px);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 88%,transparent 100%);
+}
+
+/* Right-side glass code card */
+.hero::after, .hero-section::after, #home::after{
+  content:"using .NET 10;\A\Apublic class PaymentService\A{\A  async Task ProcessAsync()\A  {\A    await gateway.PayAsync();\A    return Success;\A  }\A}\A\ASELECT * FROM Payments\AWHERE Status = 'Completed';";
+  white-space:pre;
+  position:absolute;
+  right:6%;
+  top:130px;
+  width:390px;
+  padding:26px 28px;
+  border-radius:24px;
+  font:13px/1.85 Consolas, Monaco, monospace;
+  color:rgba(139,210,255,.42);
+  background:linear-gradient(145deg,rgba(20,30,60,.38),rgba(12,18,38,.12));
+  border:1px solid rgba(120,160,255,.12);
+  box-shadow:0 30px 90px rgba(0,0,0,.22);
+  transform:rotate(-4deg);
+  pointer-events:none;
+}
+
+/* Keep actual hero content above the background */
+.hero > *, .hero-section > *, #home > *{
+  position:relative;
+  z-index:2;
+}
+
+/* Make the central gap feel intentional and denser */
+.hero-content, .hero-inner{
+  position:relative;
+  gap:20px!important;
+}
+.hero-text{
+  max-width:760px!important;
+}
+.hero h1, .hero-section h1, #home h1{
+  max-width:650px;
+}
+.hero p, .hero-section p, #home p{
+  max-width:930px;
+}
+@media(min-width:1200px){
+  .hero-image, .profile-image, .photo-wrap, .image-wrap{
+    transform:translateX(-18px);
+  }
+}
+@media(max-width:1050px){
+  .hero::after, .hero-section::after, #home::after{
+    right:2%;
+    width:300px;
+    opacity:.16;
+  }
+}
+@media(max-width:760px){
+  .hero::after, .hero-section::after, #home::after{
+    display:none;
+  }
+}
+</style>
+
+
+<style id="remove-hero-top-gap">
+/* Remove extra blank space below the navbar */
+.hero,
+.hero-section,
+#home{
+  margin-top:0!important;
+  padding-top:28px!important;
+  min-height:0!important;
+}
+
+.hero-content,
+.hero-inner,
+.hero-grid{
+  margin-top:0!important;
+  padding-top:0!important;
+  min-height:0!important;
+  align-items:center!important;
+}
+
+/* Some versions use an inner wrapper with a fixed top offset */
+.hero .container,
+.hero-section .container,
+#home .container{
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+/* Keep only normal breathing space on mobile */
+@media(max-width:760px){
+  .hero,.hero-section,#home{padding-top:18px!important;}
+}
+</style>
+
+
+<style id="premium-developer-look">
+/* ===== PREMIUM DEVELOPER PORTFOLIO LOOK ===== */
+:root{
+  --accent:#7c6cff;
+  --accent2:#27c6f5;
+  --panel:rgba(17,26,48,.72);
+}
+body{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(124,108,255,.14),transparent 24%),
+    radial-gradient(circle at 88% 18%,rgba(39,198,245,.10),transparent 25%),
+    #0b1120!important;
+}
+header, nav, .navbar{
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  background:rgba(12,20,38,.78)!important;
+  border-bottom:1px solid rgba(255,255,255,.07)!important;
+}
+.logo, .brand, .navbar-brand{
+  transition:transform .25s ease!important;
+}
+.logo:hover,.brand:hover,.navbar-brand:hover{transform:translateY(-2px)!important}
+
+/* Hero */
+.hero,.hero-section,#home{
+  background:
+    linear-gradient(120deg,rgba(12,18,38,.98),rgba(16,25,48,.88))!important;
+}
+.hero::before,.hero-section::before,#home::before{
+  opacity:.55!important;
+}
+.hero h1,.hero-section h1,#home h1{
+  letter-spacing:-2.5px!important;
+  line-height:.92!important;
+}
+.hero h1 span,.hero-section h1 span,#home h1 span{
+  background:linear-gradient(90deg,#ffffff,#8adfff 48%,#9a8cff)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+.hero p,.hero-section p,#home p{
+  color:#aebbd0!important;
+  line-height:1.7!important;
+}
+
+/* Tech chips */
+.hero .tag,.hero .chip,.tech-tag,.skill-tag,.pill{
+  border:1px solid rgba(124,108,255,.25)!important;
+  background:linear-gradient(135deg,rgba(124,108,255,.13),rgba(39,198,245,.06))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05)!important;
+  transition:transform .2s ease,border-color .2s ease!important;
+}
+.hero .tag:hover,.hero .chip:hover,.tech-tag:hover,.skill-tag:hover,.pill:hover{
+  transform:translateY(-3px)!important;
+  border-color:rgba(39,198,245,.5)!important;
+}
+
+/* Profile image card */
+.hero-image,.profile-image,.photo-wrap,.image-wrap{
+  position:relative!important;
+}
+.hero-image::before,.profile-image::before,.photo-wrap::before,.image-wrap::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-10px!important;
+  border-radius:28px!important;
+  background:linear-gradient(135deg,rgba(124,108,255,.65),rgba(39,198,245,.25),transparent 65%)!important;
+  filter:blur(16px)!important;
+  opacity:.55!important;
+  z-index:-1!important;
+}
+.hero-image img,.profile-image img,.photo-wrap img,.image-wrap img{
+  border:1px solid rgba(255,255,255,.15)!important;
+  box-shadow:0 30px 70px rgba(0,0,0,.42)!important;
+}
+
+/* Floating experience cards */
+.stat-card,.experience-card,.hero-stat{
+  background:linear-gradient(145deg,rgba(22,32,58,.92),rgba(13,20,39,.78))!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  box-shadow:0 18px 45px rgba(0,0,0,.25)!important;
+  backdrop-filter:blur(12px)!important;
+}
+
+/* Buttons */
+button,.btn,.button,a.btn,.cta-button{
+  transition:transform .22s ease,box-shadow .22s ease!important;
+}
+button:hover,.btn:hover,.button:hover,a.btn:hover,.cta-button:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 14px 32px rgba(92,112,255,.30)!important;
+}
+
+/* Section cards */
+.card,.domain-card,.project-card,.skill-card,.impact-card{
+  border:1px solid rgba(255,255,255,.07)!important;
+  background:linear-gradient(145deg,rgba(20,30,55,.78),rgba(12,19,37,.82))!important;
+  box-shadow:0 16px 45px rgba(0,0,0,.18)!important;
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease!important;
+}
+.card:hover,.domain-card:hover,.project-card:hover,.skill-card:hover,.impact-card:hover{
+  transform:translateY(-7px)!important;
+  border-color:rgba(124,108,255,.35)!important;
+  box-shadow:0 25px 60px rgba(0,0,0,.28)!important;
+}
+</style>
+
+
+<style id="dhasu-color-upgrade">
+/* ===== BOLD PREMIUM COLOR SYSTEM ===== */
+:root{
+  --electric:#5B8CFF;
+  --violet:#8B5CF6;
+  --cyan:#22D3EE;
+  --pink:#EC4899;
+  --ink:#080D1A;
+  --deep:#10182D;
+  --text:#F5F7FF;
+  --muted:#AAB6CF;
+}
+
+body{
+  background:
+    radial-gradient(circle at 8% 12%, rgba(91,140,255,.22), transparent 27%),
+    radial-gradient(circle at 88% 10%, rgba(139,92,246,.20), transparent 30%),
+    radial-gradient(circle at 58% 72%, rgba(34,211,238,.09), transparent 32%),
+    linear-gradient(135deg,#070B16 0%,#0C1430 48%,#080D1A 100%)!important;
+  color:var(--text)!important;
+}
+
+header,nav,.navbar{
+  background:linear-gradient(90deg,rgba(8,13,26,.94),rgba(15,23,47,.82),rgba(12,15,35,.94))!important;
+  border-bottom:1px solid rgba(139,92,246,.22)!important;
+}
+
+.hero,.hero-section,#home{
+  background:
+    radial-gradient(circle at 15% 45%,rgba(91,140,255,.13),transparent 32%),
+    radial-gradient(circle at 88% 38%,rgba(139,92,246,.16),transparent 30%),
+    linear-gradient(135deg,#0B1022 0%,#121B38 55%,#0A1020 100%)!important;
+}
+
+/* Make the name and major headings pop */
+.hero h1,.hero-section h1,#home h1,
+h2.section-title,h2{
+  background:linear-gradient(100deg,#FFFFFF 5%,#A5C7FF 42%,#78E8FF 65%,#B99AFF 92%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+
+/* Accent lines and decorative elements */
+.hero::before,.hero-section::before,#home::before{
+  opacity:.75!important;
+}
+.hero::after,.hero-section::after,#home::after{
+  color:rgba(83,202,255,.52)!important;
+  border-color:rgba(91,140,255,.20)!important;
+  background:linear-gradient(145deg,rgba(18,31,65,.56),rgba(9,15,33,.18))!important;
+}
+
+/* Brand/logo */
+.logo,.brand,.navbar-brand{
+  color:#F7F9FF!important;
+}
+.logo-mark,.logo-icon,.brand-icon{
+  background:linear-gradient(135deg,var(--electric),var(--violet))!important;
+  box-shadow:0 10px 30px rgba(91,140,255,.30),0 0 28px rgba(139,92,246,.20)!important;
+}
+
+/* Buttons */
+button,.btn,.button,a.btn,.cta-button{
+  color:#fff!important;
+  background:linear-gradient(100deg,#4F7FFF 0%,#6B7CFF 48%,#9A5CF6 100%)!important;
+  border:1px solid rgba(170,195,255,.22)!important;
+  box-shadow:0 12px 30px rgba(79,127,255,.25),inset 0 1px 0 rgba(255,255,255,.18)!important;
+}
+button:hover,.btn:hover,.button:hover,a.btn:hover,.cta-button:hover{
+  box-shadow:0 18px 42px rgba(91,140,255,.32),0 0 28px rgba(139,92,246,.22)!important;
+}
+
+/* Tech chips */
+.hero .tag,.hero .chip,.tech-tag,.skill-tag,.pill{
+  color:#DDE9FF!important;
+  border-color:rgba(91,140,255,.28)!important;
+  background:linear-gradient(135deg,rgba(91,140,255,.16),rgba(139,92,246,.12),rgba(34,211,238,.06))!important;
+}
+.hero .tag:hover,.hero .chip:hover,.tech-tag:hover,.skill-tag:hover,.pill:hover{
+  border-color:rgba(34,211,238,.58)!important;
+  box-shadow:0 10px 25px rgba(34,211,238,.10)!important;
+}
+
+/* Cards */
+.card,.domain-card,.project-card,.skill-card,.impact-card,.stat-card,.experience-card,.hero-stat{
+  background:
+    linear-gradient(145deg,rgba(26,38,72,.88),rgba(10,17,35,.88))!important;
+  border-color:rgba(116,142,255,.16)!important;
+}
+.card:hover,.domain-card:hover,.project-card:hover,.skill-card:hover,.impact-card:hover{
+  border-color:rgba(91,140,255,.42)!important;
+  box-shadow:0 26px 70px rgba(0,0,0,.34),0 0 30px rgba(91,140,255,.08)!important;
+}
+
+/* Photo glow */
+.hero-image::before,.profile-image::before,.photo-wrap::before,.image-wrap::before{
+  background:linear-gradient(135deg,rgba(34,211,238,.58),rgba(91,140,255,.50),rgba(139,92,246,.58),transparent 70%)!important;
+  opacity:.68!important;
+}
+
+/* Body copy */
+.hero p,.hero-section p,#home p,p{
+  color:var(--muted)!important;
+}
+.nav-links a,.nav a{
+  color:#B9C4DA!important;
+}
+.nav-links a:hover,.nav a:hover{
+  color:#7DE8FF!important;
+}
+</style>
+
+
+<style id="site-wide-unified-layout">
+/* =========================================================
+   SITE-WIDE VISUAL SYSTEM
+   One consistent width, border, radius and spacing language
+   ========================================================= */
+:root{
+  --site-max: 1695px;
+  --site-gutter: 58px;
+  --ui-radius: 30px;
+  --card-radius: 22px;
+  --ui-border: rgba(126,154,255,.17);
+  --ui-border-strong: rgba(126,154,255,.28);
+  --ui-surface: rgba(12,20,40,.78);
+}
+
+/* Keep the whole site aligned to the same left/right edges */
+body{
+  overflow-x:hidden!important;
+}
+main, .main, .page-content{
+  width:100%!important;
+}
+section:not(.hero):not(.hero-section):not(#home),
+.section{
+  width:min(var(--site-max), calc(100% - (var(--site-gutter) * 2)))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  box-sizing:border-box!important;
+}
+
+/* Hero gets the same visual outer edges as the rest of the site */
+.hero, .hero-section, #home{
+  width:min(var(--site-max), calc(100% - (var(--site-gutter) * 2)))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  border-left:1px solid var(--ui-border)!important;
+  border-right:1px solid var(--ui-border)!important;
+  border-bottom:1px solid var(--ui-border)!important;
+  border-radius:0 0 var(--ui-radius) var(--ui-radius)!important;
+  box-sizing:border-box!important;
+}
+
+/* All major content panels share one border and one rounded language */
+section.panel,
+.section-card,
+.about-section,
+.expertise-section,
+.impact-section,
+.contact-section,
+#about,#expertise,#impact,#contact{
+  border:1px solid var(--ui-border)!important;
+  border-radius:var(--ui-radius)!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+}
+
+/* Standardize inner horizontal padding */
+section:not(.hero):not(.hero-section):not(#home),
+.section,
+.hero,.hero-section,#home{
+  padding-left:40px!important;
+  padding-right:40px!important;
+}
+
+/* Avoid huge visual gaps between sections */
+section:not(.hero):not(.hero-section):not(#home),
+.section{
+  margin-top:32px!important;
+  margin-bottom:32px!important;
+}
+
+/* Cards everywhere follow the same design */
+.card,.domain-card,.project-card,.skill-card,.impact-card,
+.stat-card,.experience-card,.hero-stat,.about-card,
+.tech-card,.solution-card,.contact-card{
+  border:1px solid var(--ui-border)!important;
+  border-radius:var(--card-radius)!important;
+  background:linear-gradient(145deg,rgba(25,38,73,.82),rgba(10,17,35,.86))!important;
+  box-sizing:border-box!important;
+}
+
+/* Remove mismatched square edges inside sections */
+.about-grid,.impact-grid,.expertise-grid,.projects-grid,.domain-grid,
+.skills-grid,.contact-grid,.hero-content,.hero-inner,.hero-grid{
+  box-sizing:border-box!important;
+}
+
+/* Navbar aligned with the portfolio content */
+header,nav,.navbar{
+  width:min(var(--site-max), calc(100% - (var(--site-gutter) * 2)))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  border-left:1px solid rgba(126,154,255,.10)!important;
+  border-right:1px solid rgba(126,154,255,.10)!important;
+  border-bottom:1px solid var(--ui-border)!important;
+  border-radius:0 0 18px 18px!important;
+  box-sizing:border-box!important;
+}
+
+/* Keep the About section visually connected to the hero */
+#about,.about-section{
+  margin-top:32px!important;
+}
+
+/* Responsive consistency */
+@media(max-width:900px){
+  :root{--site-gutter:20px;}
+  section:not(.hero):not(.hero-section):not(#home),
+  .section,.hero,.hero-section,#home{
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  section:not(.hero):not(.hero-section):not(#home),
+  .section{margin-top:20px!important;margin-bottom:20px!important;}
+}
+@media(max-width:560px){
+  :root{--site-gutter:10px;--ui-radius:22px;--card-radius:18px;}
+  section:not(.hero):not(.hero-section):not(#home),
+  .section,.hero,.hero-section,#home{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+  header,nav,.navbar{
+    width:calc(100% - 20px)!important;
+  }
+}
+</style>
+
+
+<style id="fix-navbar-hero-separation">
+/* Small premium breathing space between navbar and hero */
+header + .hero,
+header + .hero-section,
+header + #home,
+nav + .hero,
+nav + .hero-section,
+nav + #home,
+.navbar + .hero,
+.navbar + .hero-section,
+.navbar + #home{
+  margin-top:22px!important;
+}
+
+/* Fallback for layouts where the navbar is fixed/overlapping */
+.hero, .hero-section, #home{
+  position:relative!important;
+  top:auto!important;
+}
+
+/* Keep the gap compact on mobile */
+@media(max-width:900px){
+  header + .hero, header + .hero-section, header + #home,
+  nav + .hero, nav + .hero-section, nav + #home,
+  .navbar + .hero, .navbar + .hero-section, .navbar + #home{
+    margin-top:14px!important;
+  }
+}
+</style>
+
+
+<style id="sexy-code-background-v2">
+/* ===== PREMIUM DEVELOPER / CODE VISUAL BACKGROUND ===== */
+:root{
+  --glow-blue: rgba(76,141,255,.22);
+  --glow-cyan: rgba(34,211,238,.16);
+  --glow-violet: rgba(139,92,246,.20);
+}
+
+/* Rich layered page background */
+body{
+  background:
+    radial-gradient(900px 520px at 4% 0%, var(--glow-blue), transparent 65%),
+    radial-gradient(800px 560px at 96% 10%, var(--glow-violet), transparent 65%),
+    radial-gradient(700px 500px at 50% 85%, var(--glow-cyan), transparent 70%),
+    linear-gradient(180deg,#070b16 0%,#0b1122 45%,#080d1a 100%)!important;
+}
+
+/* Every major section gets an intentional tech background */
+.hero,.hero-section,#home,
+#about,.about-section,
+#expertise,.expertise-section,
+#impact,.impact-section,
+#contact,.contact-section{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+}
+
+/* Fine grid pattern */
+.hero::before,.hero-section::before,#home::before,
+#about::before,.about-section::before,
+#expertise::before,.expertise-section::before,
+#impact::before,.impact-section::before,
+#contact::before,.contact-section::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-2!important;
+  opacity:.65!important;
+  background:
+    linear-gradient(rgba(107,137,220,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(107,137,220,.055) 1px,transparent 1px);
+  background-size:58px 58px!important;
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 88%,transparent 100%);
+}
+
+/* Subtle coding pattern - adapts to available section width */
+.hero::after,.hero-section::after,#home::after{
+  content:"public sealed class TechnicalLead\A{\A    public string Stack => \".NET | Cloud | AI\";\A\A    public async Task DeliverAsync()\A    {\A        await BuildSecureSolutions();\A        OptimizePerformance();\A        LeadTeams();\A    }\A}\A\A// SQL\ASELECT * FROM Payments\AWHERE Status = 'Completed';"!important;
+  white-space:pre!important;
+  position:absolute!important;
+  right:3%!important;
+  top:17%!important;
+  width:min(38%,520px)!important;
+  padding:34px!important;
+  z-index:-1!important;
+  font:600 13px/1.95 Consolas,Monaco,monospace!important;
+  letter-spacing:.2px!important;
+  color:rgba(111,213,255,.24)!important;
+  background:linear-gradient(145deg,rgba(18,31,62,.24),rgba(9,15,32,.06))!important;
+  border:1px solid rgba(91,140,255,.10)!important;
+  border-radius:28px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 30px 90px rgba(0,0,0,.12)!important;
+  transform:rotate(-3deg)!important;
+  pointer-events:none!important;
+}
+
+/* About: architecture / API code pattern */
+#about::after,.about-section::after{
+  content:"GET /api/loan\APOST /payments\A\A[Authorize]\Apublic async Task<IActionResult>\AProcessPaymentAsync()\A\A=> await service.ExecuteAsync();"!important;
+  white-space:pre!important;
+  position:absolute!important;
+  right:4%!important;
+  bottom:7%!important;
+  width:min(31%,390px)!important;
+  padding:24px 28px!important;
+  z-index:-1!important;
+  font:600 12px/1.9 Consolas,Monaco,monospace!important;
+  color:rgba(34,211,238,.18)!important;
+  border:1px solid rgba(34,211,238,.08)!important;
+  border-radius:22px!important;
+  background:rgba(8,17,34,.16)!important;
+  transform:rotate(3deg)!important;
+}
+
+/* Expertise: compact stack/code blocks */
+#expertise::after,.expertise-section::after{
+  content:"using Azure;\Ausing RetellAI;\Ausing Payments;\A\Aservices.AddCloud();\Aservices.AddAI();\Aservices.AddPaymentGateway();"!important;
+  white-space:pre!important;
+  position:absolute!important;
+  left:4%!important;
+  bottom:8%!important;
+  width:min(28%,360px)!important;
+  padding:22px 26px!important;
+  z-index:-1!important;
+  font:600 12px/1.85 Consolas,Monaco,monospace!important;
+  color:rgba(155,139,255,.17)!important;
+  border:1px solid rgba(139,92,246,.08)!important;
+  border-radius:22px!important;
+  background:rgba(14,18,42,.12)!important;
+}
+
+/* Impact/contact: subtle terminal texture */
+#impact::after,.impact-section::after,
+#contact::after,.contact-section::after{
+  content:"$ deploy --production\A✓ Build successful\A✓ APIs healthy\A✓ Payments connected\A✓ Monitoring active"!important;
+  white-space:pre!important;
+  position:absolute!important;
+  right:5%!important;
+  bottom:6%!important;
+  padding:20px 24px!important;
+  z-index:-1!important;
+  font:600 11px/1.8 Consolas,Monaco,monospace!important;
+  color:rgba(116,178,255,.16)!important;
+  border-left:1px solid rgba(91,140,255,.12)!important;
+}
+
+/* Sexy accent glow along section edges */
+.hero,.hero-section,#home,
+#about,.about-section,#expertise,.expertise-section,
+#impact,.impact-section,#contact,.contact-section{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 22px 60px rgba(0,0,0,.16)!important;
+}
+
+/* Keep all real content above the decorative code */
+.hero > *,.hero-section > *,#home > *,
+#about > *,.about-section > *,
+#expertise > *,.expertise-section > *,
+#impact > *,.impact-section > *,
+#contact > *,.contact-section > *{
+  position:relative!important;
+  z-index:2!important;
+}
+
+/* Mobile: remove large code blocks so layout stays clean */
+@media(max-width:900px){
+  .hero::after,.hero-section::after,#home::after,
+  #about::after,.about-section::after,
+  #expertise::after,.expertise-section::after,
+  #impact::after,.impact-section::after,
+  #contact::after,.contact-section::after{
+    opacity:.35!important;
+    width:50%!important;
+  }
+}
+@media(max-width:700px){
+  .hero::after,.hero-section::after,#home::after,
+  #about::after,.about-section::after,
+  #expertise::after,.expertise-section::after,
+  #impact::after,.impact-section::after,
+  #contact::after,.contact-section::after{
+    display:none!important;
+  }
+  .hero::before,.hero-section::before,#home::before,
+  #about::before,.about-section::before,
+  #expertise::before,.expertise-section::before,
+  #impact::before,.impact-section::before,
+  #contact::before,.contact-section::before{
+    opacity:.42!important;
+  }
+}
+</style>
+
+
+<style id="fix-experience-cards-above-photo">
+/* Keep experience badges above the profile image */
+.hero-stat,
+.experience-card,
+.stat-card{
+  position:relative!important;
+  z-index:50!important;
+}
+
+/* In case the badges are inside the hero visual area */
+.hero-image .hero-stat,
+.profile-image .hero-stat,
+.image-wrap .hero-stat,
+.photo-wrap .hero-stat,
+.hero-image .experience-card,
+.profile-image .experience-card,
+.image-wrap .experience-card,
+.photo-wrap .experience-card{
+  position:absolute!important;
+  z-index:100!important;
+}
+
+/* 7+ Years badge: move it clearly outside / above the image edge */
+.hero-image .hero-stat:first-child,
+.profile-image .hero-stat:first-child,
+.image-wrap .hero-stat:first-child,
+.photo-wrap .hero-stat:first-child{
+  left:-105px!important;
+  top:30px!important;
+}
+
+/* Ensure image stays behind the badges */
+.hero-image img,
+.profile-image img,
+.image-wrap img,
+.photo-wrap img{
+  position:relative!important;
+  z-index:5!important;
+}
+
+@media(max-width:900px){
+  .hero-image .hero-stat:first-child,
+  .profile-image .hero-stat:first-child,
+  .image-wrap .hero-stat:first-child,
+  .photo-wrap .hero-stat:first-child{
+    left:-35px!important;
+    top:20px!important;
+  }
+}
+</style>
+
+
+<style id="force-7-years-on-photo">
+/* Force the 7+ Years badge to sit visibly ON TOP of the photo */
+.hero-image,
+.profile-image,
+.image-wrap,
+.photo-wrap{
+  overflow:visible!important;
+}
+
+/* Put all overlay cards above the actual image */
+.hero-image .hero-stat,
+.profile-image .hero-stat,
+.image-wrap .hero-stat,
+.photo-wrap .hero-stat,
+.hero-image .experience-card,
+.profile-image .experience-card,
+.image-wrap .experience-card,
+.photo-wrap .experience-card{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:absolute!important;
+  z-index:9999!important;
+  isolation:isolate!important;
+}
+
+/* First badge = 7+ Years: place directly over the upper-left area of the photo */
+.hero-image .hero-stat:first-of-type,
+.profile-image .hero-stat:first-of-type,
+.image-wrap .hero-stat:first-of-type,
+.photo-wrap .hero-stat:first-of-type,
+.hero-image .experience-card:first-of-type,
+.profile-image .experience-card:first-of-type,
+.image-wrap .experience-card:first-of-type,
+.photo-wrap .experience-card:first-of-type{
+  left:18px!important;
+  top:28px!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+}
+
+/* Keep photo below overlays */
+.hero-image img,
+.profile-image img,
+.image-wrap img,
+.photo-wrap img{
+  z-index:1!important;
+}
+
+/* Any decorative pseudo layers must remain behind */
+.hero-image::before,.hero-image::after,
+.profile-image::before,.profile-image::after,
+.image-wrap::before,.image-wrap::after,
+.photo-wrap::before,.photo-wrap::after{
+  z-index:0!important;
+}
+
+/* The text/content inside the badge must also remain visible */
+.hero-stat *,
+.experience-card *,
+.stat-card *{
+  position:relative!important;
+  z-index:10000!important;
+  visibility:visible!important;
+}
+
+@media(max-width:900px){
+  .hero-image .hero-stat:first-of-type,
+  .profile-image .hero-stat:first-of-type,
+  .image-wrap .hero-stat:first-of-type,
+  .photo-wrap .hero-stat:first-of-type,
+  .hero-image .experience-card:first-of-type,
+  .profile-image .experience-card:first-of-type,
+  .image-wrap .experience-card:first-of-type,
+  .photo-wrap .experience-card:first-of-type{
+    left:14px!important;
+    top:18px!important;
+  }
+}
+</style>
+
+
+<style id="exact-profile-badge-fix">
+/* Exact fix for this portfolio markup: .profile > .float.f1 + img.photo */
+.profile{
+  position:relative!important;
+  overflow:visible!important;
+  isolation:isolate!important;
+}
+.profile .photo{
+  position:relative!important;
+  z-index:1!important;
+}
+.profile .float{
+  position:absolute!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  z-index:100!important;
+}
+
+/* 7+ Years badge — intentionally placed ON TOP of the upper-left photo area */
+.profile .float.f1{
+  left:18px!important;
+  top:34px!important;
+  right:auto!important;
+  bottom:auto!important;
+  z-index:999!important;
+}
+
+/* Keep 10+ Years badge above the photo as well */
+.profile .float.f2{
+  z-index:999!important;
+}
+
+.profile .float.f1 b,
+.profile .float.f1 small,
+.profile .float.f2 b,
+.profile .float.f2 small{
+  position:relative!important;
+  z-index:1000!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+@media(max-width:700px){
+  .profile .float.f1{
+    left:12px!important;
+    top:20px!important;
+  }
+}
+</style>
+
+
+<style id="responsive-name-and-no-select-fix">
+html,body{max-width:100%!important;overflow-x:hidden!important;}
+*,*::before,*::after{
+  -webkit-user-select:none!important;-moz-user-select:none!important;
+  -ms-user-select:none!important;user-select:none!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+input,textarea{
+  -webkit-user-select:text!important;-moz-user-select:text!important;
+  -ms-user-select:text!important;user-select:text!important;
+}
+.brand,.logo,.navbar-brand{flex-shrink:0!important;min-width:max-content!important;white-space:nowrap!important;}
+.brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{
+  white-space:nowrap!important;overflow:visible!important;
+}
+.nav-links{min-width:0!important;flex-wrap:wrap!important;justify-content:center!important;}
+.nav-links a{white-space:nowrap!important;}
+.nav-cta,.cta-button,.navbar .btn{flex-shrink:0!important;white-space:nowrap!important;}
+
+@media(max-width:1180px){
+  header,nav,.navbar{width:calc(100% - 32px)!important;min-height:96px!important;}
+  .nav-inner,.navbar-inner,header>div{gap:22px!important;min-width:0!important;}
+  .brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{font-size:clamp(20px,2.2vw,28px)!important;}
+  .nav-links{gap:20px!important;}
+}
+@media(max-width:900px){
+  header,nav,.navbar{
+    width:calc(100% - 24px)!important;height:auto!important;min-height:0!important;
+    padding:14px 18px!important;
+  }
+  .nav-inner,.navbar-inner,header>div{
+    display:flex!important;flex-wrap:wrap!important;justify-content:space-between!important;
+    align-items:center!important;gap:14px!important;
+  }
+  .nav-links{
+    order:3!important;width:100%!important;display:flex!important;justify-content:center!important;
+    flex-wrap:wrap!important;gap:16px!important;padding-top:4px!important;
+  }
+  .nav-cta,.cta-button,.navbar .btn{order:2!important;}
+  .brand,.logo,.navbar-brand{max-width:calc(100% - 180px)!important;}
+}
+@media(max-width:640px){
+  header,nav,.navbar{
+    width:calc(100% - 16px)!important;margin-left:auto!important;margin-right:auto!important;
+    padding:12px 14px!important;border-radius:0 0 18px 18px!important;
+  }
+  .nav-inner,.navbar-inner,header>div{gap:10px!important;}
+  .brand,.logo,.navbar-brand{max-width:calc(100% - 132px)!important;min-width:0!important;}
+  .brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{
+    font-size:clamp(17px,5vw,22px)!important;line-height:1.1!important;white-space:nowrap!important;
+  }
+  .brand-subtitle,.logo-subtitle,.navbar-brand small,.brand p,.logo p{
+    font-size:12px!important;line-height:1.25!important;white-space:normal!important;
+  }
+  .nav-cta,.cta-button,.navbar .btn{
+    font-size:13px!important;padding:12px 15px!important;max-width:128px!important;
+  }
+  .nav-links{gap:8px 14px!important;padding-top:8px!important;}
+  .nav-links a{font-size:14px!important;}
+  .hero,.hero-section,#home{
+    width:calc(100% - 16px)!important;padding-left:18px!important;padding-right:18px!important;
+  }
+  .hero h1,.hero-section h1,#home h1{
+    font-size:clamp(42px,14vw,72px)!important;line-height:.92!important;overflow-wrap:anywhere!important;
+  }
+}
+@media(max-width:400px){
+  .brand,.logo,.navbar-brand{max-width:calc(100% - 112px)!important;}
+  .brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{font-size:17px!important;}
+  .nav-cta,.cta-button,.navbar .btn{max-width:108px!important;padding:10px!important;font-size:12px!important;}
+  .nav-links{justify-content:space-around!important;}
+}
+</style>
+
+
+<style id="singh-heading-margin-fix">
+/* Fix: keep the full "Rajnish Singh" heading inside the hero */
+.hero,
+.hero-grid,
+.hero-grid > div:first-child{
+  overflow:visible!important;
+}
+
+.hero h1{
+  display:block!important;
+  margin:0 0 28px 0!important;
+  padding:0 0 14px 0!important;
+  line-height:1.08!important;
+  min-height:2.18em!important;
+}
+
+.hero h1 span{
+  display:inline-block!important;
+  padding:0 8px 8px 0!important;
+  line-height:1.08!important;
+}
+
+/* Give the heading a little more safe space on laptop/tablet */
+@media (max-width:1180px){
+  .hero h1{
+    margin-bottom:24px!important;
+    padding-bottom:16px!important;
+    line-height:1.1!important;
+  }
+}
+
+/* Mobile: prevent clipping while keeping the design compact */
+@media (max-width:640px){
+  .hero h1{
+    font-size:clamp(42px,13vw,68px)!important;
+    line-height:1.12!important;
+    min-height:0!important;
+    margin-bottom:22px!important;
+    padding-bottom:14px!important;
+  }
+  .hero h1 span{
+    padding-bottom:8px!important;
+  }
+}
+</style>
+
+
+<style id="domain-visual-motion">
+/* Domain imagery and restrained motion */
+@keyframes domainImageDrift {
+  0%   { background-position: 50% 50%; }
+  50%  { background-position: 54% 46%; }
+  100% { background-position: 50% 50%; }
+}
+@keyframes domainGlow {
+  0%,100% { box-shadow: 0 18px 48px rgba(0,0,0,.24), inset 0 0 0 1px rgba(255,255,255,.04); }
+  50%     { box-shadow: 0 24px 58px rgba(34,211,238,.13), inset 0 0 0 1px rgba(139,92,246,.18); }
+}
+@keyframes domainSweep {
+  0%   { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+  20%  { opacity: .16; }
+  65%  { opacity: .10; }
+  100% { transform: translateX(150%) skewX(-18deg); opacity: 0; }
+}
+#impact .card,
+#construction-project,
+#gaming-project,
+.payment-flow-card {
+  background-size: cover !important;
+  background-position: center !important;
+  animation: domainImageDrift 18s ease-in-out infinite, domainGlow 7s ease-in-out infinite;
+}
+#impact .card { min-height: 240px; }
+#impact .card:nth-child(1) {
+  background-image: linear-gradient(180deg,rgba(5,12,24,.12),rgba(5,12,24,.91) 82%),
+    url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=90') !important;
+}
+#impact .card:nth-child(2) {
+  background-image: linear-gradient(180deg,rgba(5,12,24,.12),rgba(5,12,24,.92) 82%),
+    url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=90') !important;
+}
+#impact .card:nth-child(3) {
+  background-image: linear-gradient(180deg,rgba(5,12,24,.12),rgba(5,12,24,.92) 82%),
+    url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=90') !important;
+}
+#impact .card:nth-child(4) {
+  background-image: linear-gradient(180deg,rgba(5,12,24,.12),rgba(5,12,24,.92) 82%),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=90') !important;
+}
+.payment-flow-card {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(110deg,rgba(5,12,24,.93),rgba(5,12,24,.72)),
+    url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=90') !important;
+}
+.payment-flow-card:after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 32%;
+  pointer-events: none;
+  background: linear-gradient(90deg,transparent,rgba(34,211,238,.30),transparent);
+  animation: domainSweep 6s ease-in-out infinite;
+}
+#construction-project {
+  background-image: linear-gradient(100deg,rgba(5,12,24,.96),rgba(5,12,24,.76)),
+    url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=90') !important;
+}
+#gaming-project {
+  background-image: linear-gradient(100deg,rgba(5,12,24,.96),rgba(5,12,24,.76)),
+    url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=90') !important;
+}
+#construction-project .card,
+#gaming-project .card {
+  animation: domainGlow 7s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #impact .card, #construction-project, #gaming-project, .payment-flow-card,
+  #construction-project .card, #gaming-project .card {
+    animation: none !important;
+  }
+  .payment-flow-card:after { animation: none !important; }
+}
+</style>
+
+
+<style id="ott-solution-domain-motion">
+/* OTT platform: animated streaming player */
+.ott-showcase{display:grid;grid-template-columns:1.35fr .85fr;gap:16px;margin:22px 0 8px;padding:16px;border:1px solid rgba(96,165,250,.22);border-radius:22px;background:linear-gradient(135deg,rgba(13,22,48,.96),rgba(9,14,32,.94));box-shadow:0 22px 55px rgba(0,0,0,.28);overflow:hidden}
+.ott-player,.ott-side{min-width:0;border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(3,8,22,.72);overflow:hidden}
+.ott-player-top{height:38px;padding:0 13px;display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.15em;color:#b9c9e8}
+.ott-live-dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d399;animation:ottPulse 1.8s infinite}
+.ott-quality{margin-left:auto;padding:3px 7px;border-radius:5px;background:rgba(34,211,238,.12);color:#67e8f9}
+.ott-screen-art{height:225px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 70% 28%,rgba(34,211,238,.30),transparent 25%),radial-gradient(circle at 25% 85%,rgba(139,92,246,.42),transparent 38%),linear-gradient(125deg,#101b3b,#172b51 52%,#10152d)}
+.ott-screen-art:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.08) 48%,transparent 72%);transform:translateX(-100%);animation:ottLightSweep 6s ease-in-out infinite}
+.ott-orbit{position:absolute;border:1px solid rgba(125,211,252,.23);border-radius:50%;width:210px;height:210px;animation:ottOrbit 18s linear infinite}
+.ott-orbit-two{width:285px;height:285px;animation-duration:26s;animation-direction:reverse;border-color:rgba(196,181,253,.18)}
+.ott-play{z-index:1;width:58px;height:58px;display:grid;place-items:center;padding-left:4px;border-radius:50%;color:white;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.55);box-shadow:0 0 35px rgba(34,211,238,.28);backdrop-filter:blur(8px);animation:ottPlayPulse 2.4s ease-in-out infinite}
+.ott-screen-caption{position:absolute;left:18px;bottom:15px;display:grid;gap:3px;text-shadow:0 2px 12px #050816}
+.ott-screen-caption small{font-size:9px;letter-spacing:.18em;color:#a5f3fc}.ott-screen-caption strong{font-size:20px}.ott-screen-caption span{font-size:10px;color:#d4def4}
+.ott-controls{height:42px;padding:0 13px;display:flex;align-items:center;gap:10px;color:#dbeafe;font-size:11px}.ott-progress{height:4px;flex:1;border-radius:99px;background:rgba(255,255,255,.15);overflow:hidden}.ott-progress i{display:block;width:42%;height:100%;border-radius:99px;background:linear-gradient(90deg,#22d3ee,#8b5cf6);animation:ottProgress 8s ease-in-out infinite alternate}.ott-controls small{font-size:9px;color:#94a3b8}
+.ott-side{padding:14px}.ott-side-label{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.12em;color:#a5b4fc;margin-bottom:12px}.ott-side-label span{color:#34d399;letter-spacing:0}
+.ott-mini-row{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.ott-thumb{width:48px;height:34px;display:grid;place-items:center;border-radius:7px;color:white;font-style:normal;font-size:11px}.thumb-one{background:linear-gradient(135deg,#0e7490,#312e81)}.thumb-two{background:linear-gradient(135deg,#7c3aed,#be185d)}.thumb-three{background:linear-gradient(135deg,#047857,#1d4ed8)}.ott-mini-row span{display:grid;gap:2px;min-width:0}.ott-mini-row b{font-size:10px;color:#e2e8f0}.ott-mini-row small{font-size:9px;color:#94a3b8}.ott-mini-row em{margin-left:auto;font-style:normal;color:#67e8f9;font-size:10px}
+.ott-subscription{margin-top:12px;padding:10px;border:1px solid rgba(52,211,153,.18);border-radius:10px;background:rgba(16,185,129,.06);display:grid;gap:3px}.ott-subscription span{font-size:8px;letter-spacing:.15em;color:#6ee7b7}.ott-subscription b{font-size:12px;color:#ecfdf5}.ott-subscription small{font-size:9px;color:#9fb7c8}
+
+/* Solution Delivery: animated code editor and typing cursor */
+.live-code-terminal{margin:22px 0 8px;border:1px solid rgba(99,102,241,.28);border-radius:17px;overflow:hidden;background:linear-gradient(145deg,rgba(3,8,23,.98),rgba(13,20,47,.96));box-shadow:0 20px 55px rgba(0,0,0,.30)}
+.live-terminal-head{height:42px;display:flex;align-items:center;gap:10px;padding:0 15px;background:rgba(99,102,241,.09);border-bottom:1px solid rgba(255,255,255,.07);font-size:11px;color:#dbeafe}.live-terminal-head b{font-size:11px}.terminal-status{margin-left:auto;color:#6ee7b7;font-size:9px;letter-spacing:.12em}
+.live-terminal-body{padding:15px 18px;font:12px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;color:#dbeafe}.terminal-line{display:flex;gap:16px;white-space:pre-wrap}.terminal-ln{width:16px;flex:0 0 16px;color:#64748b;text-align:right}.terminal-muted{color:#64748b}.terminal-line i{color:#c084fc;font-style:normal}.terminal-line b{color:#67e8f9;font-weight:600}.terminal-typed{display:inline-block;overflow:hidden;white-space:nowrap;max-width:0;animation:terminalTyping 4s steps(44,end) .7s infinite alternate}.terminal-caret{display:inline-block;width:7px;height:14px;margin-left:2px;background:#22d3ee;vertical-align:middle;animation:terminalBlink .8s steps(2) infinite}.terminal-build{margin:12px 0 0 32px;padding:8px 10px;border:1px solid rgba(52,211,153,.16);border-radius:8px;background:rgba(16,185,129,.06);color:#a7f3d0;font:10px/1.5 ui-monospace,monospace}.terminal-build span{color:#64748b;padding:0 5px}.build-check{color:#34d399!important}
+
+/* Domain expertise: distinct image treatments and animated light/border details */
+#domains .card{position:relative;isolation:isolate;overflow:hidden;min-height:205px;background-size:cover!important;background-position:center!important;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease!important;animation:domainFloat 7s ease-in-out infinite}
+#domains .card:nth-child(2){animation-delay:.6s}#domains .card:nth-child(3){animation-delay:1.2s}#domains .card:nth-child(4){animation-delay:1.8s}#domains .card:nth-child(5){animation-delay:2.4s}#domains .card:nth-child(6){animation-delay:3s}
+#domains .card:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.95;background:linear-gradient(180deg,rgba(5,10,25,.24),rgba(5,10,25,.94) 88%);pointer-events:none}
+#domains .card:after{content:"";position:absolute;z-index:-1;top:-30%;left:-75%;width:45%;height:160%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,rgba(125,211,252,.12),transparent);animation:domainCardSweep 8s ease-in-out infinite;pointer-events:none}
+#domains .card:nth-child(1){background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=90')!important}
+#domains .card:nth-child(2){background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=90')!important}
+#domains .card:nth-child(3){background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=90')!important}
+#domains .card:nth-child(4){background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=90')!important}
+#domains .card:nth-child(5){background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=90')!important}
+#domains .card:nth-child(6){background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=90')!important}
+#domains .card:hover{transform:translateY(-8px) scale(1.015)!important;border-color:rgba(34,211,238,.42)!important;box-shadow:0 24px 55px rgba(0,0,0,.38),0 0 24px rgba(34,211,238,.10)!important}
+#domains .card h3,#domains .card p,#domains .card .icon,#domains .card .number{position:relative;z-index:1}
+@keyframes ottPulse{50%{box-shadow:0 0 2px #34d399,0 0 18px #34d399}}
+@keyframes ottLightSweep{55%,100%{transform:translateX(120%)}}
+@keyframes ottOrbit{to{transform:rotate(360deg)}}
+@keyframes ottPlayPulse{50%{transform:scale(1.09);box-shadow:0 0 48px rgba(34,211,238,.42)}}
+@keyframes ottProgress{to{width:78%}}
+@keyframes terminalTyping{0%{max-width:0}55%,100%{max-width:100%}}
+@keyframes terminalBlink{50%{opacity:0}}
+@keyframes domainFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes domainCardSweep{0%,15%{left:-75%;opacity:0}35%{opacity:1}65%,100%{left:140%;opacity:0}}
+@media(max-width:760px){.ott-showcase{grid-template-columns:1fr;padding:10px}.ott-screen-art{height:190px}.live-terminal-body{font-size:10px;padding:12px}.terminal-build{margin-left:0;font-size:9px}#domains .card{min-height:185px}}
+@media(prefers-reduced-motion:reduce){.ott-live-dot,.ott-screen-art:before,.ott-orbit,.ott-play,.ott-progress i,.terminal-typed,.terminal-caret,#domains .card,#domains .card:after{animation:none!important}.terminal-typed{max-width:100%}.ott-progress i{width:55%}}
+</style>
+
+</head>
+<body>
+<nav><div class="wrap navin">
+<a class="brand" href="#"><div class="logo">.NET</div><div><b>Rajnish Singh</b><small>Senior .NET Developer | Full Stack .NET Developer</small></div></a>
+<div class="links"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#impact">Impact</a><a href="#contact">Contact</a></div>
+<a class="cta" href="#contact">Let's Connect →</a>
+</div></nav>
+
+<main class="wrap">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<div class="kicker"><span class="pulse"></span> </div>
+<h1><span>Rajnish</span><br>Singh</h1>
+<div class="role">Senior .NET Developer | .NET, Cloud, AI & Financial Technology Solutions</div>
+<p class="desc">Experienced Technical Lead specializing in .NET, Cloud, and enterprise technology solutions across Finance, Auto Loan, Payment Processing, Construction ERP, Gaming & Betting Systems, and OTT Platforms. Strong expertise in building scalable .NET applications, modernizing legacy financial systems, and developing secure, transaction-safe services. Hands-on experience integrating Retell AI conversational voice-driven agents for automated Welcome Calls, Call Attending, and Loan Collection workflows, along with architecting flexible Payment Processor integrations for Credit Card and ACH transactions.</p>
+<div class="tags"><span class="tag">.NET</span><span class="tag">Cloud & Azure</span><span class="tag">Retell AI</span><span class="tag">Payment Processor</span><span class="tag">Credit Card & ACH</span><span class="tag">Finance</span><span class="tag">Auto Loan</span><span class="tag">Twilio</span><span class="tag">Sage Intacct</span></div>
+<div class="actions"><a class="btn primary" href="#impact">Explore My Work ↓</a><a class="btn" href="https://www.linkedin.com/in/rajnish-singh-7a93755a/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div>
+</div>
+<div class="profile">
+<div class="orb"></div>
+<div class="float f1"><b>7+ Years</b><small>.NET Experience</small></div>
+<img class="photo" src="rajnish-profile.jpeg" alt="Rajnish Singh - professional profile photo" alt="Rajnish Singh">
+<div class="float f2"><b>10+ Years</b><small>Overall IT Experience</small></div>
+</div>
+</div>
+</section>
+
+<section id="about" class="panel pad about-grid">
+<div class="about">
+<div class="eyebrow">01 / About</div><h2 class="title">Leading Technology With <span>Business Impact</span></h2>
+<p>I’m a Senior .NET Developer focused on building modern, scalable, and high-performance enterprise solutions. With 7+ years of hands-on experience in the Microsoft ecosystem, I work across C#, .NET Framework, .NET 6/8/10, ASP.NET Core, Web APIs, Microservices, Angular, SQL Server, PostgreSQL, Azure, and AWS.</p>
+<p style="margin-top:10px">My work spans Finance &amp; Auto Loan, Payment Processing, Construction ERP, Gaming &amp; Betting, and OTT platforms. From modernizing large-scale legacy systems to building secure, transaction-heavy services, I’ve delivered solutions involving Credit Card &amp; ACH payments, IVR, AutoPay, Future Pay, Pay-by-Text, recurring payments, and flexible payment processor integrations. I also build AI-powered customer automation using Retell AI voice agents and work with integrations such as Twilio, Solution by Text, Sage Intacct, and third-party payment platforms.</p>
+<p style="margin-top:10px">Beyond writing code, I lead solutions from idea to production—shaping architecture, designing APIs and databases, solving complex technical challenges, reviewing code, and improving performance and reliability. I work closely with clients and stakeholders, mentor development teams, support production systems, and focus on turning complex business requirements into practical technology solutions that deliver real impact.</p>
+
+
+<div class="highlight">Technical Leadership • .NET & Cloud • Retell AI • Payment Processing • Finance & Auto Loan • Client Handling • Team Leadership • Production Support</div>
+</div>
+<div class="stats">
+<div class="stat"><b>7+</b><small>Years .NET Experience</small></div>
+<div class="stat"><b>10+</b><small>Overall IT Experience</small></div>
+<div class="stat"><b>6+</b><small>Business Domains</small></div>
+<div class="stat"><b>Lead</b><small>Architecture & Delivery</small></div>
+</div>
+</section>
+
+<section id="expertise" class="panel pad">
+<div class="eyebrow">02 / Expertise</div><h2 class="title">Technology & <span>Leadership Stack</span></h2>
+<div class="bento" style="margin-top:18px">
+<div class="card c8"><div class="icon">⚡</div><h3>.NET Engineering & Modernization</h3><p>Building scalable APIs and enterprise applications while gradually modernizing legacy .NET Framework 4.5/4.8 systems toward modern cloud-optimized .NET APIs.</p></div>
+<div class="card c4"><div class="icon">☁️</div><h3>Cloud & Azure</h3><p>Cloud-ready architecture, deployment, monitoring and scalable services.</p></div>
+<div class="card c4"><div class="icon">💳</div><h3>Payment & IVR Solutions</h3><ul><li>IVR Payment Solution</li><li>Payment Processor Integration</li><li>Credit Card & ACH Payments</li><li>One-Time Pay</li><li>Future Pay & AutoPay</li><li>Pay-by-Text Payments</li><li>Dynamic Gateway Switching</li></ul></div>
+<div class="card c4"><div class="icon">☎️</div><h3>IVR & Automated Payments</h3><p>Experience building IVR-based payment solutions for secure customer payment journeys, supporting card and ACH transactions with automated payment workflows.</p></div><div class="card c4 feature"><div class="icon">🤖</div><h3>Retell AI Voice Agents</h3><ul><li>Welcome Calls</li><li>Call Attending</li><li>Loan Collection Automation</li></ul></div>
+<div class="card c4"><div class="icon">🗄️</div><h3>Data & Performance</h3><p>SQL Server, PostgreSQL, Stored Procedures, Views, Triggers, SQL Jobs and optimization.</p></div>
+</div>
+</section>
+
+<section id="impact" class="panel pad">
+<div class="eyebrow">03 / Domain Impact</div><h2 class="title">Built Around <span>Complex Business Systems</span></h2>
+<div class="impact" style="margin-top:18px">
+<div class="card"><div class="number">01</div><h3>Finance & Auto Loan</h3><p>Business-critical loan servicing, repayment workflows, dealer visibility and portfolio operations.</p></div>
+<div class="card"><div class="number">02</div><h3>Payment Processor</h3><p>Abstract payment pipeline supporting Credit Card and ACH transactions with runtime gateway configuration.</p></div>
+<div class="card"><div class="number">03</div><h3>AI Automation</h3><p>Conversational voice-driven customer touchpoints powered by Retell AI for calls and collection workflows.</p></div>
+<div class="card"><div class="number">04</div><h3>Enterprise Platforms</h3><p>Construction ERP, Sage CRM integrations, Gaming Math Engines and OTT platform experience.</p></div>
+</div>
+</section>
+
+<section class="panel pad">
+<div class="eyebrow">04 / Solution Delivery</div>
+<h2 class="title">From Requirement To <span>Production</span></h2>
+<p style="color:var(--muted);font-size:14px;margin-top:8px;max-width:820px">End-to-end technical ownership—from client requirements and solution design to third-party integrations, secure payment workflows, deployment, and production support.</p>
+
+<div class="flow">
+<span class="step">Client Requirements</span><span class="arrow">→</span>
+<span class="step">Solution Architecture</span><span class="arrow">→</span>
+<span class="step">Technical Design</span><span class="arrow">→</span>
+<span class="step">Third-Party Integration</span><span class="arrow">→</span>
+<span class="step">Development</span><span class="arrow">→</span>
+<span class="step">Code Review</span><span class="arrow">→</span>
+<span class="step">Deployment</span><span class="arrow">→</span>
+<span class="step">Production Support</span>
+</div>
+
+<div class="bento" style="margin-top:18px">
+<div class="card c6"><div class="icon">🔗</div><h3>Third-Party Integrations</h3><p>Hands-on experience integrating enterprise platforms and communication services including <b>Twilio</b> for SMS and Pay-by-Text workflows, <b>Solution by Text (SBT)</b> for customer communication, and <b>Sage Intacct</b> for ERP and financial data integration.</p></div>
+<div class="card c6 payment-flow-card"><div class="icon">💳</div><h3>ACH & Card Payment Workflows</h3><p>Designed and developed secure payment workflows supporting <b>ACH, Credit Card and Card Payments</b>, including One-Time Pay, Future Pay and AutoPay capabilities with flexible payment processor and gateway integrations.</p></div>
+<div class="card c6"><div class="icon">📊</div><h3>Real-Time Dealer Management Portal</h3><p>Built a data-dense dashboard providing finance partners with immediate visibility into payment details, dealer activity and portfolio health.</p></div>
+<div class="card c6"><div class="icon">💬</div><h3>TextEZ / Customer Communication</h3><p>Developed complex text communication workflows with opt-in/opt-out configurations, automated payment reminders, notifications, marketing and customer outreach campaigns.</p></div>
+</div>
+</section>
+
+<section class="panel pad" id="construction-project">
+<div class="eyebrow">06 / FEATURED PROJECT</div>
+<h2 class="title">US-Based Construction ERP & <span>Bidding Platform</span></h2>
+<p style="color:var(--muted);font-size:14px;margin-top:8px;max-width:900px">Designed and developed a construction bidding and project management solution that helps contractors manage project invitations, opportunities, bids, take-offs, proposals, resources, equipment, inventory, and job costs. Integrated Sage Intacct to support centralized management and synchronization of project-related business data.</p>
+<div class="bento" style="margin-top:18px">
+<div class="card c4"><div class="number">01</div><h3>Bid Management</h3><p>Manage and track contractor bids across the complete bidding lifecycle.</p></div>
+<div class="card c4"><div class="number">02</div><h3>Invitations & Opportunities</h3><p>Project invitation workflows and opportunity creation for relevant bidding projects.</p></div>
+<div class="card c4"><div class="number">03</div><h3>Take-Off & Proposals</h3><p>Take-off workflows and proposal summary creation to support bid preparation.</p></div>
+<div class="card c4"><div class="number">04</div><h3>Scheduling & Resources</h3><p>Project scheduling and resource allocation for improved project planning.</p></div>
+<div class="card c4"><div class="number">05</div><h3>Cost & Budget Control</h3><p>Cost estimation and budget tracking to improve financial visibility.</p></div>
+<div class="card c4"><div class="number">06</div><h3>Equipment & Inventory</h3><p>Manage equipment and inventory requirements associated with projects.</p></div>
+<div class="card c6"><div class="number">07</div><h3>Job Cost Summary Tracking</h3><p>Track and monitor job costs to provide better visibility into project expenses and cost performance.</p></div>
+<div class="card c6"><div class="number">08</div><h3>Sage Intacct Integration</h3><p>Integrated Sage Intacct for connected project and business data management workflows.</p></div>
+</div>
+</section>
+<section class="panel pad" id="gaming-project">
+<div class="eyebrow">07 / FEATURED PROJECT</div>
+<h2 class="title">Mega 2 Ball & Mega 3 Ball <span>Gaming Applications</span></h2>
+<p style="color:var(--muted);font-size:14px;margin-top:8px;max-width:900px">Developed gaming and betting applications that allow players to participate in time-based game rounds, place bets, manage balances, and receive point-based rewards. The applications support Mega 2 Ball and Mega 3 Ball game formats, with three game types and recurring game rounds every three minutes. Integrated the Opexa platform to support payoff-related workflows.</p>
+<div class="bento" style="margin-top:18px">
+<div class="card c4"><div class="number">01</div><h3>Betting Workflows</h3><p>Enabled players to participate in supported game rounds and place bets through the application.</p></div>
+<div class="card c4"><div class="number">02</div><h3>Mega 2 Ball & Mega 3 Ball</h3><p>Built and supported two gaming applications with distinct Mega 2 Ball and Mega 3 Ball formats.</p></div>
+<div class="card c4"><div class="number">03</div><h3>Three Game Types</h3><p>Supported three different game types across the gaming applications.</p></div>
+<div class="card c4"><div class="number">04</div><h3>3-Minute Game Rounds</h3><p>Implemented recurring time-based game cycles with a new game round every three minutes.</p></div>
+<div class="card c4"><div class="number">05</div><h3>Player Balance & Points</h3><p>Managed player balances and point-based reward workflows based on game outcomes.</p></div>
+<div class="card c4"><div class="number">06</div><h3>Opexa Payoff Integration</h3><p>Integrated the Opexa platform to support payoff-related processing within the gaming workflow.</p></div>
+</div>
+</section><section class="panel pad" id="ott-project">
+<div class="eyebrow">08 / FEATURED PROJECT</div>
+<h2 class="title">OTT <span>Video Platform</span></h2>
+<p style="color:var(--muted);font-size:14px;margin-top:8px;max-width:900px">Designed and developed a subscription-based OTT platform focused on motivational video content, with video publishing, customer subscriptions, and streaming access. The platform enables content creators or administrators to upload videos and allows customers to access and stream content through their accounts based on active subscription plans.</p>
+<div class="ott-showcase" aria-label="Animated OTT platform preview">
+  <div class="ott-player">
+    <div class="ott-player-top"><span class="ott-live-dot"></span> NOW STREAMING <span class="ott-quality">HD</span></div>
+    <div class="ott-screen-art">
+      <div class="ott-orbit ott-orbit-one"></div><div class="ott-orbit ott-orbit-two"></div>
+      <div class="ott-play">▶</div>
+      <div class="ott-screen-caption"><small>FEATURED CONTENT</small><strong>Ideas That Move You</strong><span>Motivation • Learning • Growth</span></div>
+    </div>
+    <div class="ott-controls"><span>▶</span><div class="ott-progress"><i></i></div><small>08:42 / 24:10</small><span>⚙</span></div>
+  </div>
+  <div class="ott-side">
+    <div class="ott-side-label">YOUR LIBRARY <span>● ACTIVE</span></div>
+    <div class="ott-mini-row"><i class="ott-thumb thumb-one">▶</i><span><b>Daily Inspiration</b><small>Continue watching</small></span><em>▶</em></div>
+    <div class="ott-mini-row"><i class="ott-thumb thumb-two">▶</i><span><b>Mindset & Growth</b><small>New videos</small></span><em>▶</em></div>
+    <div class="ott-mini-row"><i class="ott-thumb thumb-three">▶</i><span><b>Success Stories</b><small>Subscriber content</small></span><em>▶</em></div>
+    <div class="ott-subscription"><span>SUBSCRIPTION</span><b>Access enabled</b><small>Recurring billing • AutoPay</small></div>
+  </div>
+</div>
+<div class="bento" style="margin-top:18px">
+<div class="card c4"><div class="number">01</div><h3>Video Content Management</h3><p>Upload, organize, and manage motivational video content through the platform.</p></div>
+<div class="card c4"><div class="number">02</div><h3>Streaming Experience</h3><p>Browse available video content and stream videos with access controlled by active subscriptions.</p></div>
+<div class="card c4"><div class="number">03</div><h3>Customer Accounts</h3><p>Customer account functionality to manage access and subscription-related information.</p></div>
+<div class="card c4"><div class="number">04</div><h3>Subscription Plans</h3><p>Subscription-based access model for customers to consume available video content.</p></div>
+<div class="card c4"><div class="number">05</div><h3>Subscription Payments</h3><p>Payment workflows supporting subscription purchases and recurring billing requirements.</p></div>
+<div class="card c4"><div class="number">06</div><h3>AutoPay</h3><p>Automated recurring payment workflows to support continuous subscription access.</p></div>
+</div>
+</section><section id="contact" class="panel pad contact">
+<div><div class="eyebrow">05 / Contact</div><h2>Let's Build Something <span>Amazing.</span></h2><p>Open to Senior .NET Developer and Full Stack .NET Developer opportunities involving enterprise platforms, cloud modernization, AI automation and financial technology.</p>
+<a class="contact-page-cta" href="contact.html">✉ Send Me a Message</a>
+</div>
+<div class="contact-links">
+<a href="mailto:rajnishsuman47@gmail.com"><b>✉ Email</b><small>rajnishsuman47@gmail.com</small></a>
+<a href="https://www.linkedin.com/in/rajnish-singh-7a93755a/" target="_blank" rel="noopener noreferrer"><b>in LinkedIn</b><small>linkedin.com/in/rajnish-singh-7a93755a</small></a>
+<a href="https://github.com/rajnishssm47" target="_blank" rel="noopener noreferrer"><b>◉ GitHub</b><small>github.com/rajnishssm47</small></a>
+</div>
+
+<a href="https://www.facebook.com/rajnish.s.suman" target="_blank"><b>f Facebook</b><small>facebook.com/rajnish.s.suman</small></a></section>
+</main>
+
+<section id="solution-delivery" class="panel">
+<div class="solution-code-bg" aria-hidden="true">
+  <span class="l1">public class <b>SolutionDelivery</b> { // C# .NET</span>
+  <span class="l2">// SOLUTION DELIVERY</span>
+  <span class="l3">await Build → Test → Deploy → Support → Optimize();</span>
+  <span class="l4">SELECT Architecture, Performance FROM EnterpriseSolutions;</span>
+  <span class="l5">SOLUTION DELIVERY</span>
+</div>
+<div class="eyebrow">🚀 SOLUTION DELIVERY</div><h2 class="section-title">From Architecture to <span>Production</span></h2><p>Building secure, scalable enterprise solutions with C#, .NET, SQL Server, APIs, cloud integration and production-ready delivery practices.</p>
+<div class="live-code-terminal" aria-label="Animated code being written">
+  <div class="live-terminal-head"><span class="dots"><i></i><i></i><i></i></span><b>Developer Workspace</b><span class="terminal-status">● LIVE CODING</span></div>
+  <div class="live-terminal-body">
+    <div class="terminal-line"><span class="terminal-ln">01</span><span class="terminal-muted">// Building a reliable payment workflow</span></div>
+    <div class="terminal-line"><span class="terminal-ln">02</span><span><i>public async Task</i> <b>ProcessPaymentAsync</b>()</span></div>
+    <div class="terminal-line"><span class="terminal-ln">03</span><span>{</span></div>
+    <div class="terminal-line terminal-type-line"><span class="terminal-ln">04</span><span class="terminal-typed">    var result = await gateway.ProcessAsync();</span><span class="terminal-caret"></span></div>
+    <div class="terminal-line"><span class="terminal-ln">05</span><span>    await repository.SaveAsync(result);</span></div>
+    <div class="terminal-line"><span class="terminal-ln">06</span><span>    return result;</span></div>
+    <div class="terminal-line"><span class="terminal-ln">07</span><span>}</span></div>
+    <div class="terminal-build"><span class="build-check">✓</span> Build succeeded <span>•</span> Tests passed <span>•</span> Ready to deploy</div>
+  </div>
+</div>
+<div class="code-showcase">
+  <div class="code-window">
+    <div class="code-title"><span class="dots"><i></i><i></i><i></i></span>CustomerPaymentService.cs <span style="margin-left:auto;color:#818cf8">C# / .NET</span></div>
+<pre><span class="kw">public async</span> <span class="type">Task</span>&lt;<span class="type">PaymentResult</span>&gt; <span class="fn">ProcessPaymentAsync</span>(
+    <span class="type">PaymentRequest</span> request)
+{
+    <span class="kw">var</span> customer = <span class="kw">await</span> _repository
+        .<span class="fn">GetCustomerAsync</span>(request.CustomerId);
+
+    <span class="kw">if</span> (customer <span class="kw">is null</span>)
+        <span class="kw">return</span> PaymentResult.<span class="fn">Failed</span>(<span class="str">"Customer not found"</span>);
+
+    <span class="kw">var</span> processor = _paymentFactory
+        .<span class="fn">GetProcessor</span>(request.Method);
+
+    <span class="kw">return await</span> processor
+        .<span class="fn">ProcessAsync</span>(request);
+}</pre>
+  </div>
+
+  <div>
+    <div class="code-window">
+      <div class="code-title"><span class="dots"><i></i><i></i><i></i></span>PaymentSummary.sql <span style="margin-left:auto;color:#38bdf8">SQL Server</span></div>
+<pre><span class="kw">SELECT</span>
+    c.CustomerId,
+    c.CustomerName,
+    <span class="fn">SUM</span>(p.Amount) <span class="kw">AS</span> TotalPaid,
+    <span class="fn">COUNT</span>(p.PaymentId) <span class="kw">AS</span> PaymentCount
+<span class="kw">FROM</span> <span class="sql">Customers</span> c
+<span class="kw">JOIN</span> <span class="sql">Payments</span> p
+  <span class="kw">ON</span> p.CustomerId = c.CustomerId
+<span class="kw">WHERE</span> p.Status = <span class="str">'Success'</span>
+<span class="kw">GROUP BY</span> c.CustomerId, c.CustomerName
+<span class="kw">ORDER BY</span> TotalPaid <span class="kw">DESC</span>;</pre>
+    </div>
+    <div class="code-stats">
+      <span class="code-stat">⚙ Clean Architecture</span>
+      <span class="code-stat">🔗 REST APIs</span>
+      <span class="code-stat">☁ Cloud Ready</span>
+      <span class="code-stat">🚀 CI/CD Delivery</span>
+    </div>
+  </div>
+</div>
+</section><section class="panel pad" id="domains">
+<div class="eyebrow">05 / DOMAIN EXPERTISE</div>
+<h2 class="title">Experience Across <span>Multiple Domains</span></h2>
+<p style="color:var(--muted);font-size:14px;margin-top:8px;max-width:820px">
+Strong hands-on experience delivering enterprise and business-critical solutions across finance, payments and multiple industry domains.
+</p>
+
+<div class="bento" style="margin-top:18px">
+<div class="card c4"><div class="icon">💰</div><h3>Finance & Auto Loan</h3><p>Loan servicing, customer payment journeys, dealer workflows, portfolio visibility and finance platform modernization.</p></div>
+<div class="card c4"><div class="icon">💳</div><h3>Payments Processing</h3><p>ACH and card payments, payment processor integrations, gateway abstraction, One-Time Pay, Future Pay and AutoPay workflows.</p></div>
+<div class="card c4"><div class="icon">🏗️</div><h3>Construction ERP & Bidding Platform</h3><p>US-based application helping contractors manage the complete bidding lifecycle, project opportunities, proposals, resources, and job costs.</p></div>
+<div class="card c4"><div class="icon">🔗</div><h3>CRM & Sage Integrations</h3><p>Third-party and enterprise integrations including CRM workflows and Sage Intacct integration for connected business and financial processes.</p></div>
+<div class="card c4"><div class="icon">🎮</div><h3>Gaming & Betting Systems</h3><p>Built Mega 2 Ball and Mega 3 Ball gaming applications with real-time game rounds, betting workflows, player balances, point-based rewards, and Opexa payoff platform integration.</p></div>
+<div class="card c4"><div class="icon">▶️</div><h3>OTT Video Platform</h3><p>Developed a subscription-based OTT platform for uploading and streaming motivational video content, with customer accounts, subscription payments, and AutoPay workflows.</p></div>
+</div>
+</section>
+<footer>© 2026 Rajnish Singh • Senior .NET Developer • .NET, Cloud, AI & Financial Technology Solutions</footer>
+<script id="premium-motion">
+document.addEventListener("DOMContentLoaded",()=>{
+  const items=document.querySelectorAll(".card,.panel");
+  if(!("IntersectionObserver" in window)) return;
+  items.forEach(el=>{el.style.opacity="0";el.style.transform="translateY(16px)";el.style.transition="opacity .55s ease, transform .55s ease"});
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.opacity="1";
+        e.target.style.transform="translateY(0)";
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.08});
+  items.forEach(el=>io.observe(el));
+});
+</script>
+
+</body>
+</html>
