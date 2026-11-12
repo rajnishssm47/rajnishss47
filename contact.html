@@ -68,6 +68,35 @@ footer{text-align:center;color:#7786a7;font-size:13px;padding:0 20px 35px}
   .info,.form-card{padding:20px}.nav{padding:14px 16px}
 }
 </style>
+
+<style id="contact-page-motion">
+:root{--contact-ease:cubic-bezier(.2,.75,.25,1)}
+.contact-motion-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;pointer-events:none;background:rgba(255,255,255,.05)}
+.contact-motion-progress span{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#818cf8,#c084fc);transform:scaleX(var(--scroll-progress,0));transform-origin:left;box-shadow:0 0 14px rgba(34,211,238,.5)}
+.contact-reveal{opacity:0;transform:translate3d(0,24px,0);transition:opacity .7s var(--contact-ease),transform .7s var(--contact-ease);transition-delay:var(--contact-delay,0ms)}
+.contact-reveal.contact-visible{opacity:1;transform:translate3d(0,0,0)}
+.contact-page-motion .hero .badge{animation:contactBadgePulse 3.5s ease-in-out infinite}
+.contact-page-motion .hero h1{animation:contactHeadingIn .85s var(--contact-ease) both}
+.contact-page-motion .info,.contact-page-motion .form-card{transition:transform .35s var(--contact-ease),box-shadow .35s ease,border-color .35s ease}
+.contact-page-motion .info:hover,.contact-page-motion .form-card:hover{transform:translateY(-5px);box-shadow:0 30px 75px rgba(0,0,0,.36);border-color:rgba(34,211,238,.28)}
+.contact-page-motion .info-item{transition:transform .28s var(--contact-ease),background .28s ease,border-color .28s ease}
+.contact-page-motion .info-item:hover{transform:translateX(5px);background:rgba(34,211,238,.045);border-color:rgba(34,211,238,.25)}
+.contact-page-motion .info-item .icon{transition:transform .35s var(--contact-ease),box-shadow .35s ease}
+.contact-page-motion .info-item:hover .icon{transform:rotate(-8deg) scale(1.1);box-shadow:0 0 22px rgba(34,211,238,.2)}
+.contact-page-motion input,.contact-page-motion textarea{transition:border-color .25s ease,box-shadow .25s ease,background .25s ease}
+.contact-page-motion input:focus,.contact-page-motion textarea:focus{border-color:rgba(34,211,238,.7)!important;box-shadow:0 0 0 3px rgba(34,211,238,.10),0 0 25px rgba(34,211,238,.08);outline:none}
+.contact-page-motion button,.contact-page-motion .back{transition:transform .25s var(--contact-ease),box-shadow .25s ease,border-color .25s ease}
+.contact-page-motion button:hover,.contact-page-motion .back:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(34,211,238,.12)}
+.contact-page-motion footer:before{content:"";display:block;width:min(260px,55vw);height:1px;margin:0 auto 18px;background:linear-gradient(90deg,transparent,#22d3ee,#a78bfa,transparent);animation:contactLine 5s ease-in-out infinite}
+@keyframes contactBadgePulse{0%,100%{box-shadow:0 0 0 rgba(34,211,238,0)}50%{box-shadow:0 0 24px rgba(34,211,238,.16)}}
+@keyframes contactHeadingIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes contactLine{0%,100%{opacity:.45;transform:scaleX(.7)}50%{opacity:1;transform:scaleX(1.15)}}
+@media(max-width:760px){.contact-reveal{transform:translateY(16px)}}
+@media(prefers-reduced-motion:reduce){
+  .contact-reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .contact-page-motion *{animation:none!important;transition:none!important}
+}
+</style>
 </head>
 <body>
 <nav>
@@ -130,5 +159,37 @@ footer{text-align:center;color:#7786a7;font-size:13px;padding:0 20px 35px}
 </main>
 
 <footer>© 2026 Rajnish Singh • Senior .NET Developer • .NET, Cloud, AI & Enterprise Technology</footer>
+
+<script id="contact-page-motion-script">
+(function(){
+  const body=document.body;
+  const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  body.classList.add("contact-page-motion");
+  const targets=Array.from(document.querySelectorAll("main .hero,main .info,main .form-card,main .info-item,main form label,main form input,main form textarea,main form button,footer"));
+  targets.forEach((el)=>{
+    el.classList.add("contact-reveal");
+    const siblings=Array.from(el.parentElement.children).filter(x=>targets.includes(x));
+    el.style.setProperty("--contact-delay",Math.min(Math.max(0,siblings.indexOf(el)),6)*70+"ms");
+  });
+  const bar=document.createElement("div");
+  bar.className="contact-motion-progress";
+  bar.setAttribute("aria-hidden","true");
+  bar.innerHTML="<span></span>";
+  body.appendChild(bar);
+  let ticking=false;
+  const update=()=>{
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.setProperty("--scroll-progress",max>0?Math.min(1,Math.max(0,window.scrollY/max)):0);
+    ticking=false;
+  };
+  window.addEventListener("scroll",()=>{if(!ticking){ticking=true;window.requestAnimationFrame(update)}},{passive:true});
+  window.addEventListener("resize",update,{passive:true});update();
+  if(reduce||!("IntersectionObserver" in window)){targets.forEach(el=>el.classList.add("contact-visible"));return;}
+  const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("contact-visible");io.unobserve(entry.target);}
+  }),{threshold:.08,rootMargin:"0px 0px -30px 0px"});
+  targets.forEach(el=>io.observe(el));
+})();
+</script>
 </body>
 </html>
